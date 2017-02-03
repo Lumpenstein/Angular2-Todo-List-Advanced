@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TODO List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- 1. Chargement des libraries -->
+     <!-- Polyfill(s) pour les vieux navigateurs: il comble la différence de support -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    
+    <!-- 2. Configuration SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+  
+  <!-- 3. Affichage de l'application -->
+  <body>
+    <todo-lists>Loading...</todo-lists>
+  </body>
+</html>

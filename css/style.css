@@ -1,0 +1,45 @@
+body{
+	background-color: #2980b9;
+}
+.list{
+	width: 400px;
+	margin: 0 auto !important;
+	padding: 50px !important;
+	text-align: left;;
+}
+ul{
+	list-style: none;
+	padding-left: 0;
+}
+li{
+	background-color: white;
+	border-radius: 5px;
+	border: 2px solid black;
+	margin: 2px 0;
+	vertical-align: middle;
+}
+li input{
+	border: none;
+	font-size: 1.3em;
+}
+li button{
+	border: none;
+	border-radius: 5px;
+	background-color: white;
+	display: none;
+}
+li:hover button{
+	display: inline-block;
+}
+
+.done{
+	text-decoration: line-through;
+	background-color: #2070aa;
+	color: white;
+}
+.listUndone .done{
+	display: none;
+}
+.listDone li:not(.done){
+	display: none;
+}

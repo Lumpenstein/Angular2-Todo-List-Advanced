@@ -1,0 +1,28 @@
+<section class="list">
+  <h1>{{title}}</h1>
+  <input #task  (keyup.enter)="add(task.value); task.value=''" type="text" placeholder="Enter a new todo"><button (click)="add(task.value); task.value=''">ADD</button>
+
+  <h2>Todo : </h2>
+  <ul class="listUndone" dnd-sortable-container [sortableData]="todos">  
+    <li *ngFor="let current of todos; let i = index"  dnd-sortable [sortableIndex]="i" [class.done]='current.status === true' dnd-draggable [dragEnabled]="true">
+        <input [(ngModel)]="current.status" type="checkbox">
+        <input [(ngModel)]="current.task"  type="text" value="{{current.task}}" [class.done]='current.status === true'><button (click)="delete(current)">X</button>
+    </li>
+  </ul>
+
+  <h2>Done :</h2>
+  <ul class="listDone">  
+    <li *ngFor="let current of todos" [class.done]='current.status === true'>
+        <input [(ngModel)]="current.status" type="checkbox">
+        <input [(ngModel)]="current.task"  type="text" value="{{current.task}}" [class.done]='current.status === true'><button (click)="delete(current)">X</button>
+    </li>
+  </ul>
+</section>
+
+
+
+
+
+<!-- <student-detail [currentStudent]=selectedStudent></student-detail> -->
+<!-- (click) = 'selectStudent(current)' -->
+<!-- [class.odd]='current.id % 2 === 0' -->
